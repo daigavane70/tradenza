@@ -3,8 +3,8 @@ import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
-import {Route, Redirect} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -18,24 +18,21 @@ class SignIn extends React.Component {
   }
 
   handleSubmit = async (event) => {
-    
     event.preventDefault();
-    this.setState({dispError: ""})
+    this.setState({ dispError: "" });
 
     const { email, password } = this.state;
     try {
       auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: "", password: "" });
-      
-      if( this.props.user !== null )
-      {
-          console.log("insiede if condition");
-          <Redirect to="/dashboard"/>
-      }
 
+      if (this.props.user !== null) {
+        console.log("insiede if condition");
+        <Redirect to="/dashboard" />;
+      }
     } catch (error) {
       console.error(error);
-      this.setState({dispError: error})
+      this.setState({ dispError: error });
     }
   };
 
@@ -75,7 +72,7 @@ class SignIn extends React.Component {
           <div className="buttons">
             <CustomButton type="submit">Sign in</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with Google
+              Google Sign in
             </CustomButton>
           </div>
         </form>
@@ -84,10 +81,10 @@ class SignIn extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    user: state.currentUser
-  }
-}
+    user: state.currentUser,
+  };
+};
 
 export default connect(mapStateToProps)(SignIn);

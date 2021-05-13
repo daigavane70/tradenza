@@ -9,17 +9,8 @@ var config = {
   storageBucket: "trading-platform-f2f17.appspot.com",
   messagingSenderId: "304755729311",
   appId: "1:304755729311:web:c60e2be90dc8036f6793aa",
-  measurementId: "G-22G7Q0Z10B"
+  measurementId: "G-22G7Q0Z10B",
 };
-
-// const config = {
-//   apiKey: "AIzaSyCfawrbYuihmX-LlykzHZsXaseOmIweW80",
-//   authDomain: "crwn-db-f9778.firebaseapp.com",
-//   projectId: "crwn-db-f9778",
-//   storageBucket: "crwn-db-f9778.appspot.com",
-//   messagingSenderId: "999944817900",
-//   appId: "1:999944817900:web:206d78a7b7f0cc317ba9c9",
-// };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) {

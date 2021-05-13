@@ -1,6 +1,6 @@
 .news {
   height: 550px;
-  overflow: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   border: 1px black solid;
   border-radius: 5px;

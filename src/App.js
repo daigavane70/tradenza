@@ -13,17 +13,17 @@ import SignInSignUpPage from "../src/Views/sign-in-and-sign-up/sign-in-and-sign-
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import Footer from './Components/footer';
 
-const userData = {
-  name: "Warren Buffett",
-  capital: 6500,
-  holdings: [
-    { scrip: "Reliance", avg: 2000, qty: 100 },
-    { scrip: "Wipro", avg: 200, qty: 150 },
-    { scrip: "HDFC", avg: 1300, qty: 30 },
-    { scrip: "Bajaj Finance", avg: 8500, qty: 20 },
-    { scrip: "Infosys", avg: 500, qty: 1000 },
-  ],
-};
+// const userData = {
+//   name: "Warren Buffett",
+//   capital: 6500,
+//   holdings: [
+//     { scrip: "Reliance", avg: 2000, qty: 100 },
+//     { scrip: "Wipro", avg: 200, qty: 150 },
+//     { scrip: "HDFC", avg: 1300, qty: 30 },
+//     { scrip: "Bajaj Finance", avg: 8500, qty: 20 },
+//     { scrip: "Infosys", avg: 500, qty: 1000 },
+//   ],
+// };
 
 function App(props) {
 

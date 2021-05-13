@@ -48,26 +48,14 @@ const tablebodyForCurrentHolding = currentHolding.map((item) => {
 const newsCard = news.map((item) => {
   return (
     <div class="row">
-      {/* <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">{item.companyName}</span>
-            <p>{item.news}</p>
-          </div>
-          <div class="card-action">
-            <p>{item.time}</p>
-          </div>
-        </div>
-      </div> */}
-
       <div class="card  m-1">
         <h5 class="card-header text-white bg-dark text-center">
           {item.companyName}
         </h5>
-        <div class="card-body  bg-light ">
+        <div class="card-body  bg-secondary text-white ">
           {/* <h5 class="card-title">Special title treatment</h5> */}
           <p class="card-text">{item.news}</p>
-          <small>{item.time}</small>
+          <small>Time - {item.time}</small>
         </div>
       </div>
     </div>
@@ -86,7 +74,9 @@ const Analyze = (props) => {
   return (
     <div className="container">
       <br></br>
-      <h4 className="text-white">Available Funds - 2998</h4>
+      <h4 className="text-white">
+        Available Funds - <span class="badge bg-warning text-dark">3423</span>
+      </h4>
       <div className="row m-3">
         <div className="col-lg-6">
           <h4 class="text-center text-white">News</h4>
