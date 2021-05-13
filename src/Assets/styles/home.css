@@ -1,0 +1,48 @@
+.home {
+
+    height: 90vh;
+    overflow-y: hidden;
+    background-image: url('../images/stock 8.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.home .inner-div{
+    padding-top: 100px;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+.home .edc{
+    font-size: 60px;
+}
+
+.home .tradenza{
+    margin-top: 60px;
+    user-select: text;        
+    font-size: 160px;
+}
+
+@media (max-width: 1000px) {
+
+    .home .edc{
+        font-size: 40px;
+    }
+
+    .home .tradenza{
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .home .edc{
+        font-size: 25px;
+    }
+
+    .home .tradenza{
+        font-size: 60px;
+    }
+}

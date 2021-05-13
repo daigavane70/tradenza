@@ -1,0 +1,14 @@
+.App{
+  min-height: 100vh;
+  background-color: black;
+}
+
+.navbar{
+  user-select: none;
+}
+
+.nav-item{
+  margin-inline: 10px;
+  text-decoration: none;
+  font-style: normal;
+}
