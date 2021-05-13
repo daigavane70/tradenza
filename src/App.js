@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import Navbar from "./Components/navbar";
 import SignInSignUpPage from "../src/Views/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import PrivateRoute from "../src/Components/privateRoute/privateRoute.component";
 
 const userData = {
   name: "Warren Buffett",
@@ -25,11 +26,9 @@ const userData = {
 };
 
 function App(props) {
-
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
-
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -49,24 +48,27 @@ function App(props) {
   }, []);
 
   return (
-    <div className='container-fluid App'>
-
-      <header className='bg-dark'>
+    <div className="container-fluid App">
+      <header className="bg-dark">
         <Navbar></Navbar>
       </header>
 
       <Switch>
         <Route path="/analyze" component={Analyze}></Route>
-        <Route path="/dashboard" component={Dashboard}></Route>
+        <PrivateRoute path="/dashboard" component={Dashboard}></PrivateRoute>
         <Route path="/funds" component={Funds}></Route>
-        
-        <Route exact path="/signin" render={() => (
-          props.user == null ? (
-            <SignInSignUpPage/>
-          ) : (
-            <Redirect exact to="/" />
-          )
-        )} />
+
+        <Route
+          exact
+          path="/signin"
+          render={() =>
+            props.user == null ? (
+              <SignInSignUpPage />
+            ) : (
+              <Redirect exact to="/" />
+            )
+          }
+        />
 
         <Route exact path="/" component={Home}></Route>
         {/* {props.user == null ? <Route exact path="/signin" component={SignInSignUpPage}></Route> : null}
@@ -79,7 +81,7 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     tick: state.tick,
-    user: state.currentUser
+    user: state.currentUser,
   };
 };
 
