@@ -83,7 +83,10 @@ const navBar = (props) => {
           {props.user === null ? (
             <span> </span>
           ) : (
-            <span class="navbar-text">{props.user.displayName}</span>
+            <span class="navbar-text">
+              {props.user.displayName}{" "}
+              <span class="badge bg-warning text-dark">3423</span>{" "}
+            </span>
           )}
         </div>
       </div>
