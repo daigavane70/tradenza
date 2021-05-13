@@ -1,0 +1,96 @@
+.home {
+    text-align: center;
+}
+
+@keyframes home-bg-animation {
+    0%{
+        background-image: url('../images/stock 8.jpg');
+    }
+    33%{
+        background-image: url('../images/stock1.jpg');
+    }
+    67%{
+        background-image: url('../images/stock2.jpg');
+    }
+    100%{
+        background-image: url('../images/stock 8.jpg');
+    }
+}
+
+.side-bar {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.rules {
+    border-left: 1px solid gray;
+}
+
+.rules .content{
+
+    height: 500px;
+
+    overflow: scroll;
+    overflow-x: hidden;
+
+    scrollbar-width: 2px;
+
+}
+
+.home .container-fluid{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+
+    animation-name: home-bg-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+    padding: 0px;
+}
+
+.home .heads{
+
+    background: linear-gradient(to right,black, rgba(0, 0, 0, 0.7), black);
+
+    text-align: center;
+
+}
+
+.home .welcome{
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.home .edc{
+    font-size: 40px;
+}
+
+.home .tradenza{
+    margin-top: 40px;
+    user-select: text;        
+    font-size: 160px;
+}
+
+@media (max-width: 1000px) {
+
+    .home .edc{
+        font-size: 40px;
+    }
+
+    .home .tradenza{
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .home .edc{
+        font-size: 25px;
+    }
+
+    .home .tradenza{
+        font-size: 60px;
+    }
+}

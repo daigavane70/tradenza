@@ -1,0 +1,15 @@
+.App{
+  min-height: 100vh;
+  background-color: black;
+  font-family: 'cinzel', sans-serif;
+}
+
+.navbar{
+  user-select: none;
+}
+
+.nav-item{
+  margin-inline: 10px;
+  text-decoration: none;
+  font-style: normal;
+}
