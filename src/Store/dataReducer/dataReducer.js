@@ -1,4 +1,4 @@
-import * as Actions from "./Actions";
+import * as Actions from "./dataActions";
 import DefaultState from './DefaultState';
 
 const Reducer = (state = DefaultState, action) => {
@@ -11,11 +11,11 @@ const Reducer = (state = DefaultState, action) => {
       };
     }
 
-    case Actions.SETCURRENTUSER:
-      return {
-        ...state,
-        currentUser: action.payload
-    };
+    // case Actions.SETCURRENTUSER:
+    //   return {
+    //     ...state,
+    //     currentUser: action.payload
+    // };
 
     case Actions.BUYORDER: {
       console.log("Buy Order");

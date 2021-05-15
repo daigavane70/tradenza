@@ -1,7 +1,7 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {setLTP} from '../../Store/Actions';
+import {setLTP} from '../../Store/dataReducer/dataActions';
 import {connect} from 'react-redux';
 
 function ReChart(props) {

@@ -7,7 +7,7 @@ export const SETAVAILABLESHARES = "SETAVAILABLESHARES";
 export const STARTREFRESH = "STARTREFRESH";
 export const SETTICK = "SETTICK";
 export const MOVETICK = "MOVETICK";
-export const SETCURRENTUSER = "SETCURRENTUSER";
+// export const SETCURRENTUSER = "SETCURRENTUSER";
 
 export const setChartData = (data) => {
   return {
@@ -18,10 +18,10 @@ export const setChartData = (data) => {
   };
 };
 
-export const setCurrentUser = (user) => ({
-  type: SETCURRENTUSER,
-  payload: user,
-});
+// export const setCurrentUser = (user) => ({
+//   type: SETCURRENTUSER,
+//   payload: user,
+// });
 
 export const buyOrder = (orderDetails) => {
   return {

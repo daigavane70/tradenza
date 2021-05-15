@@ -6,12 +6,14 @@ import Dashboard from "./Views/Dashboard";
 import Home from "./Views/Home";
 import Funds from "./Views/Funds";
 import Analyze from "./Views/Analyze";
-import { setCurrentUser, setTick, moveTick } from "./Store/Actions";
+import { setCurrentUser } from './Store/loginReducer/loginActions';
+import { setTick, moveTick } from "./Store/dataReducer/dataActions";
 import { connect } from "react-redux";
 import Navbar from "./Components/navbar";
 import SignInSignUpPage from "../src/Views/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import Footer from './Components/footer';
+import Store from './Store/Store';
 
 // const userData = {
 //   name: "Warren Buffett",
@@ -38,12 +40,12 @@ function App(props) {
         userRef.onSnapshot((snapShot) => {
           props.setCurrentUser({
             id: snapShot.data(),
-            ...snapShot.data(),
           });
         });
       } else {
         props.setCurrentUser(userAuth);
       }
+
     });
 
     // console.log("UserData set to: ", userData);
@@ -53,10 +55,11 @@ function App(props) {
     <div className='container-fluid App'>
 
       <header className='bg-dark'>
-        <Navbar></Navbar>
+        <Navbar/>
       </header>
 
       <Switch>
+
         <Route path="/analyze" component={Analyze}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
         <Route path="/funds" component={Funds}></Route>
@@ -80,8 +83,8 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    tick: state.tick,
-    user: state.currentUser
+    tick: state.data.tick,
+    user: state.user.currentUser
   };
 };
 

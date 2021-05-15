@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { setAvailableShares } from "../Store/Actions";
+import { setAvailableShares } from "../Store/dataReducer/dataActions";
 import { connect } from "react-redux";
 import "../Assets/styles/analyze.css";
 

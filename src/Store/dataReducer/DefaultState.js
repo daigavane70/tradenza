@@ -1,5 +1,4 @@
 const defaultState = {
-    user: null,
     count: 1,
     ltp: 0,
     chartData: [

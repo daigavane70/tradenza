@@ -47,7 +47,7 @@ const navBar = (props) => {
 
 const mapStateToProps = state => {
     return{
-        user: state.currentUser
+        user: state.user.currentUser
     }
 }
 

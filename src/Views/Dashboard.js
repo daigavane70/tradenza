@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from '../Components/Chart/ReChart';
 import { connect } from 'react-redux';
-import { setChartData } from '../Store/Actions';
+import { setChartData } from '../Store/dataReducer/dataActions';
 import { ReData } from '../Assets/data';
 import Order from '../Components/order';
 import StockList from '../Components/stockList';
@@ -45,7 +45,7 @@ const Dashboard = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        chartData: state.chartData
+        chartData: state.data.chartData
     }
 }
 
