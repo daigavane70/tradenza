@@ -7,7 +7,7 @@ export const SETAVAILABLESHARES = "SETAVAILABLESHARES";
 export const STARTREFRESH = "STARTREFRESH";
 export const SETTICK = "SETTICK";
 export const MOVETICK = "MOVETICK";
-// export const SETCURRENTUSER = "SETCURRENTUSER";
+export const LEADERBOARD = 'LEADERBOARD';
 
 export const setChartData = (data) => {
   return {
@@ -17,11 +17,6 @@ export const setChartData = (data) => {
     },
   };
 };
-
-// export const setCurrentUser = (user) => ({
-//   type: SETCURRENTUSER,
-//   payload: user,
-// });
 
 export const buyOrder = (orderDetails) => {
   return {
@@ -79,8 +74,9 @@ export const moveTick = () => {
   };
 };
 
-// export const startRefresing = () => {
-//     return {
-//         type: STARTREFRESH
-//     }
-// }
+export const setLeaderBoard = (leaderBoard) => {
+  return {
+    type: LEADERBOARD,
+    leaderBoard: leaderBoard
+  }
+}

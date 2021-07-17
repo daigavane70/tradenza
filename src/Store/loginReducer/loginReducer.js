@@ -11,7 +11,7 @@ const Reducer = (state = DefaultState, action) => {
     case Actions.SETCURRENTUSER:
       return {
         ...state,
-        currentUser: action.user
+        currentUser: action.payload
     };
 
     case Actions.USERLOGOUT:

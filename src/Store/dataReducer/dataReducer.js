@@ -17,6 +17,14 @@ const Reducer = (state = DefaultState, action) => {
     //     currentUser: action.payload
     // };
 
+    case Actions.LEADERBOARD: {
+      console.log("Setting Leaderboard")
+      return {
+        ...state,
+        leaderBoard: action.leaderBoard
+      }
+    }
+
     case Actions.BUYORDER: {
       console.log("Buy Order");
       return state;

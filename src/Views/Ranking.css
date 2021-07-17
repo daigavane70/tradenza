@@ -1,0 +1,13 @@
+.ranking{
+    margin-block: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ranking-table{
+    background: linear-gradient( rgba(95, 0, 0, 0), rgb(95, 160, 144));
+}
+
+.ranking .heading-row{
+    background-color: rgb(44, 44, 44);
+}

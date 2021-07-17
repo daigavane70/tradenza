@@ -29,12 +29,12 @@ const navBar = (props) => {
                         <NavLink className='nav-item' activeClassName='text-success' exact to='/'> Home </NavLink>
                         <NavLink className='nav-item' activeClassName='text-success' to='/dashboard'> DashBoard </NavLink>
                         <NavLink className='nav-item' activeClassName='text-success' to='/analyze'> Analyze </NavLink>
-                        <NavLink className='nav-item' activeClassName='text-success' to='/funds'> Funds </NavLink>
+                        <NavLink className='nav-item' activeClassName='text-success' to='/ranking'> Ranking </NavLink>
 
                         { props.user === null ? 
                             <NavLink className='nav-item' activeClassName='text-success' to='/signin'> SignIn/SignUp </NavLink> 
                             :
-                            <NavLink className='nav-item' activeClassName='text-success' to='/' onClick={() => auth.signOut()}> SignOut </NavLink>
+                            <NavLink className='nav-item' exact to='/' onClick={() => auth.signOut()}> SignOut </NavLink>
                         }
                     
                     </ul>

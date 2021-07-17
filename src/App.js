@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Dashboard from "./Views/Dashboard";
 import Home from "./Views/Home";
-import Funds from "./Views/Funds";
+import Ranking from "./Views/Ranking";
 import Analyze from "./Views/Analyze";
 import { setCurrentUser } from './Store/loginReducer/loginActions';
 import { setTick, moveTick } from "./Store/dataReducer/dataActions";
@@ -62,7 +62,7 @@ function App(props) {
 
         <Route path="/analyze" component={Analyze}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
-        <Route path="/funds" component={Funds}></Route>
+        <Route path="/ranking" component={Ranking}></Route>
         
         <Route exact path="/signin" render={() => (
           props.user == null ? (
