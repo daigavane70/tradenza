@@ -25,24 +25,19 @@ const Funds = (props) => {
                 
                 <table className='row ranking-table table-dark table-striped table-hover'>
                     <thead className='heading-row'>
-
                         <th className='row m-0'>
                             <th className='col-1 my-2'> # </th>
                             <th className='col-6 my-2'> Name </th>
                             <th className='col-2 my-2'> Net Worth </th>
                             <th className='col-3 my-2'> Growth </th>
                         </th>
-
                     </thead>
-
                     <Zoom cascade bottom>
                         <tbody>
                             {ranks}
                         </tbody>
                     </Zoom>
-
                 </table>
-
             </Zoom>
         </div>
     )

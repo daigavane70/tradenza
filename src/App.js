@@ -6,14 +6,14 @@ import Dashboard from "./Views/Dashboard";
 import Home from "./Views/Home";
 import Ranking from "./Views/Ranking";
 import Analyze from "./Views/Analyze";
-import { setCurrentUser } from './Store/loginReducer/loginActions';
+import { setCurrentUser } from "./Store/loginReducer/loginActions";
 import { setTick, moveTick } from "./Store/dataReducer/dataActions";
 import { connect } from "react-redux";
 import Navbar from "./Components/navbar";
 import SignInSignUpPage from "../src/Views/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import Footer from './Components/footer';
-import Store from './Store/Store';
+import Footer from "./Components/footer";
+import Store from "./Store/Store";
 
 // const userData = {
 //   name: "Warren Buffett",
@@ -28,15 +28,12 @@ import Store from './Store/Store';
 // };
 
 function App(props) {
-
   let unsubscribeFromAuth = null;
 
   useEffect(() => {
-
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-
         userRef.onSnapshot((snapShot) => {
           props.setCurrentUser({
             id: snapShot.data(),
@@ -45,38 +42,33 @@ function App(props) {
       } else {
         props.setCurrentUser(userAuth);
       }
-
     });
-
     // console.log("UserData set to: ", userData);
   }, []);
 
   return (
-    <div className='container-fluid App'>
-
-      <header className='bg-dark'>
-        <Navbar/>
+    <div className="container-fluid App">
+      <header className="bg-dark">
+        <Navbar />
       </header>
-
       <Switch>
-
         <Route path="/analyze" component={Analyze}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
         <Route path="/ranking" component={Ranking}></Route>
-        
-        <Route exact path="/signin" render={() => (
-          props.user == null ? (
-            <SignInSignUpPage/>
-          ) : (
-            <Redirect exact to="/" />
-          )
-        )} />
+        <Route
+          exact
+          path="/signin"
+          render={() =>
+            props.user == null ? (
+              <SignInSignUpPage />
+            ) : (
+              <Redirect exact to="/" />
+            )
+          }
+        />
         <Route exact path="/" component={Home}></Route>
-      
       </Switch>
-
-      <Footer/>
-
+      <Footer />
     </div>
   );
 }
@@ -84,7 +76,7 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     tick: state.data.tick,
-    user: state.user.currentUser
+    user: state.user.currentUser,
   };
 };
 
